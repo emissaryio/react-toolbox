@@ -199,7 +199,7 @@ const factory = (MenuItem) => {
     renderItems() {
       return React.Children.map(this.props.children, (item) => {
         if (!item) return item;
-        if (item.type === MenuItem) {
+        if (item.type.displayName === MenuItem.displayName) {
           return React.cloneElement(item, {
             ripple: item.props.ripple || this.props.ripple,
             selected: typeof item.props.value !== 'undefined'
